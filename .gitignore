@@ -1,0 +1,9 @@
+## Kicad
+*-lib-table
+*-cache
+*-rescue.lib
+*.sch-bak
+*.kicad_pcb-bak
+*.dcm
+*.bak
+pcb/l130-backups
