@@ -9,6 +9,13 @@ The goal is to be able to use it as a generic FPGA development board. Ideally we
 
 ![Photo of the PCB](docs/pcb.jpg)
 
+# Board without main components
+
+![Top layer](docs/top.jpg)
+![Bottom layer](docs/bottom.jpg)
+
+Both images were distorted so that the vias match. The top image is the top layer and the bottom image is the bottom layer.
+
 # Block diagram
 
 ![Block diagram](docs/diagram.png)
