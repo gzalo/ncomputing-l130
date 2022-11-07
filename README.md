@@ -16,6 +16,8 @@ The goal is to be able to use it as a generic FPGA development board. Ideally we
 
 Both images were distorted so that the vias match. The top image is the top layer and the bottom image is the bottom layer.
 
+![Labels](docs/top_labels.png)
+
 # Component list
 
 [You can find the full component list here. Some of them might not have values, or may contain errors.](docs/components.csv)
