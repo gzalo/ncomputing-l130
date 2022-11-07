@@ -1,0 +1,262 @@
+Designator,Type,Value
+RA1,Resistor array(x4),151
+RA2,Resistor array(x4),151
+RA3,Resistor array(x4),151
+RA4,Resistor array(x4),151
+RA5,Resistor array(x4),151
+RA6,Resistor array(x4),151
+CS1,Electrolytic capacitor,220 16v
+CS2,Electrolytic capacitor,220 16v
+CS3,Electrolytic capacitor,220 16v
+CS4,Electrolytic capacitor,10 16v
+CS5,Electrolytic capacitor,220 16v
+CS6,Electrolytic capacitor,10 16v
+CS7,Electrolytic capacitor,10 16v
+CS8,Electrolytic capacitor,10 16v
+CS9,Electrolytic capacitor,220 16v
+CS10,Electrolytic capacitor,10 16v
+CS11,Electrolytic capacitor,100 16v
+CS12,Electrolytic capacitor,100 16v
+CS13,Electrolytic capacitor,220 16v
+Q1,Bipolar Transistor,PNP
+Q2,Bipolar Transistor,PNP
+Q3,Bipolar Transistor,NPN
+Q4,Bipolar Transistor,NPN
+FB1,Ferrite bead
+FB2,Ferrite bead
+FB3,Ferrite bead
+FB4,Ferrite bead
+FB5,Ferrite bead
+FB6,Ferrite bead
+FB7,Ferrite bead
+FB8,Ferrite bead
+FB9,Ferrite bead,Unpopulated
+FB10,Ferrite bead
+FB11,Ferrite bead,Unpopulated
+R1,Resistor,152
+R2,Resistor,152
+R3,Resistor,39X
+R4,Resistor,10A
+R5,Resistor,18A
+R6,Resistor,820
+R7,Resistor,820
+R8,Resistor,820
+R9,Resistor,820
+R10,Resistor,820
+R11,Resistor,18A
+R12,Resistor,820
+R13,Resistor,820
+R14,Resistor,820
+R15,Resistor,820
+R16,Resistor,18A
+R17,Resistor,820
+R18,Resistor,330
+R19,Resistor,820
+R20,Resistor,820
+R21,Resistor,330
+R22,Resistor,820
+R23,Resistor,202
+R24,Resistor,202
+R25,Resistor,202
+R26,Resistor,202
+R27,Resistor,202
+R28,Resistor,202
+R29,Resistor,202
+R30,Resistor,510
+R31,Resistor,510
+R32,Resistor,303
+R33,Resistor,202
+R34,Resistor,0
+R35,Resistor,0
+R36,Resistor,Unpopulated
+R37,Resistor,202
+R38,Resistor,510
+R39,Resistor,510
+R40,Resistor,330
+R41,Resistor,202
+R42,Resistor,330
+R43,Resistor,330
+R44,Resistor,330
+R45,Resistor,202
+R46,Resistor,510
+R47,Resistor,280
+R48,Resistor,510
+R49,Resistor,202
+R50,Resistor,202
+R51,Resistor,202
+R52,Resistor,820
+R53,Resistor,331
+R54,Resistor,202
+R55,Resistor,820
+R56,Resistor,750
+R57,Resistor,202
+R58,Resistor,820
+R59,Resistor,202
+R60,Resistor,202
+R61,Capacitor,?
+R62,Resistor,202
+R63,Resistor,202
+R64,Resistor,202
+R65,Resistor,202
+R66,Resistor,202
+R67,Resistor,202
+R68,Resistor,202
+R69,Resistor,202
+R70,?,Unpopulated
+R71,Resistor,750
+R72,?,Unpopulated
+R73,Resistor,202
+R74,Resistor,202
+R75,Resistor,202
+R76,Resistor,202
+R77,Resistor,202
+R78,Resistor,Unpopulated
+R79,Resistor,Unpopulated
+R80,Resistor,Unpopulated
+R81,Resistor,Unpopulated
+R82,Resistor,560
+R83,Resistor,560
+R84,Resistor,Unpopulated
+R85,Resistor,Unpopulated
+R86,Resistor,Unpopulated
+R87,Resistor,Unpopulated
+R88,INDUCTOR,?
+R89,Resistor,Unpopulated
+R90,Resistor,Unpopulated
+R91,Resistor,0
+R92,Resistor,203
+R93,Resistor,203
+R94,Resistor,823
+R95,Resistor,823
+R96,Resistor,121
+R97,Resistor,101
+C1,Capacitor,10n
+C2,Capacitor,120n
+C3,Capacitor,1u
+C4,Capacitor,120n
+C5,Capacitor,43p
+C6,Capacitor,44p
+C7,Capacitor,100n
+C8,Capacitor,43p
+C9,Capacitor,100n
+C10,Capacitor,44p
+C11,Capacitor,43p
+C12,Capacitor,100n
+C13,Capacitor,2.2u
+C14,Capacitor,2.2u
+C15,Capacitor,43p
+C16,Capacitor,44p
+C17,Capacitor,44p
+C18,Capacitor,124n
+C19,Capacitor,10n
+C20,Capacitor,10n
+C21,Capacitor,100n
+C22,Capacitor,100n
+C23,Capacitor,124n
+C24,Capacitor,100n
+C25,Capacitor,122n
+C26,Capacitor,30p
+C27,Capacitor,30p
+C28,Capacitor,30p
+C29,Capacitor,316p
+C30,Capacitor,120n
+C31,Capacitor,Unpopulated?
+C32,Capacitor,120n
+C33,Capacitor,?
+C34,Capacitor,10n
+C35,Capacitor,120n
+C36,Capacitor,Unpopulated?
+C37,Capacitor,10n
+C38,Capacitor,Unpopulated?
+C39,Capacitor,120n
+C40,Capacitor,120n
+C41,Capacitor,120n
+C42,Capacitor,120n
+C43,Capacitor,120n
+C44,Capacitor,Unpopulated?
+C45,Capacitor,120n
+C46,Capacitor,317p
+C47,Capacitor,315p
+C48,Capacitor,Unpopulated?
+C49,Capacitor,300p
+C50,Capacitor,315p
+C51,Capacitor,Unpopulated?
+C52,Capacitor,Unpopulated?
+C53,Capacitor,120n
+C54,Capacitor,Unpopulated?
+C55,Capacitor,120n
+C56,Capacitor,Unpopulated?
+C57,Capacitor,100n
+C58,Capacitor,100n
+C59,Capacitor,10n
+C60,Capacitor,100n
+C61,Capacitor,100n
+C62,Capacitor,100n
+C63,Capacitor,100n
+C64,Capacitor,10n
+C65,Capacitor,100n
+C66,Capacitor,100n
+C67,Capacitor,100n
+C68,Capacitor,100n
+C69,Capacitor,10n
+C70,Capacitor,100n
+C71,Capacitor,10n
+C72,Capacitor,100n
+C73,Capacitor,100n
+C74,Capacitor,100n
+C75,Capacitor,Unpopulated?
+C76,Capacitor,100n
+C77,Capacitor,160p
+C78,Capacitor,100n
+C79,Capacitor,10n
+C80,Capacitor,10n
+C81,Capacitor,126n
+C82,Capacitor,43p
+C83,Capacitor,10n
+C84,Capacitor,Unpopulated?
+C85,Capacitor,330p
+C86,Capacitor,100n
+C87,Capacitor,123n
+C88,Capacitor,Unpopulated?
+C89,Capacitor,10n
+C90,Capacitor,Unpopulated?
+C91,Capacitor,10n
+C92,Capacitor,120n
+C93,Capacitor,10n
+C94,Capacitor,?
+C95,Capacitor,317p
+C96,Capacitor,Unpopulated?
+C97,Capacitor,44p
+C98,Capacitor,Unpopulated?
+C99,Capacitor,Unpopulated?
+C100,Capacitor,Unpopulated?
+C101,Capacitor,Unpopulated?
+C102,Capacitor,Unpopulated?
+C103,Capacitor,2.5u
+C104,Capacitor,Unpopulated?
+C105,Resistor,?
+C106,Capacitor,Unpopulated?
+C107,Capacitor,Unpopulated?
+C108,Capacitor,2.5u
+SW1,Power switch
+CN1,Power connector
+CN2,VGA connector
+CN3,RJ45 connector with transformers
+MOUSE1,PS2 mouse connector
+KEY1,PS2 keyboard connector
+CN6,Audio connector
+CN8,Audio connector (not populated)
+CN7,USB connector (not populated)
+CN5,2x6 connector,JTAG CPLD
+CN4,2x6 connector,GPIO CPLD
+LED1,Green LED,Power LED
+LED2,Green LED,FPGA controlled LED
+LED3,Green LED,FPGA controlled LED
+OSC1,80MHz oscillator
+U1,Voltage Regulator,1117-ADJ
+U2,Ethernet PHY,RTL8201CL
+U3,FPGA,EP1C6Q240C8N
+U4,CPLD,EPM3128ATC100-10N
+U5,SPI Flash,AT45DB041B
+U6,SDRAM,IS42S32400D-7TL
+U7,Voltage Regulator,1117-3.3
