@@ -31,27 +31,35 @@ Both images were distorted so that the vias match. The top image is the top laye
 - JTAG programmer: Altera USB Blaster
 - Software: Quartus II 13.0sp1 (can be downloaded from Intel website, has Linux support)
 
-We'll try to reprogram the board without requiring any physical mods. If we can't, we'll try to modify it as little as possible.
+# Building the projects and programming the board
 
-When using Quartus to generate the bitstream, remember that by default non defined pins are marked as outputs and are LOW. This can cause short circuits and destroy the rest of the circuit. To avoid that, you should go to Assignments->Device->Device and Pin Options...->Unused Pins and set it to "As input tri-stated with weak pull-up".
+- cpld-passthrough: This project is used to program the CPLD. It makes the CPLD passthrough the signals required for programming the FPGA.
+- fpga-blink: This project is used to program the FPGA. It makes the FPGA blink the LEDs.
 
-# Objectives
+**When using Quartus to generate the bitstream, remember that by default non defined pins are marked as outputs and are LOW. This can cause short circuits and destroy the rest of the circuit. To avoid that, you should go to Assignments->Device->Device and Pin Options...->Unused Pins and set it to "As input tri-stated with weak pull-up".**
 
-- Reverse engineer main components and connections
-- Basic Blinky test for CPLD
-- Using ASP for loading FPGA bistream
-- CPLD code to load FPGA bitstream from serial flash
-- Blinky in FPGA
-- Serial port FPGA
-- Sound output
-- Keyboard 
-- VGA output
-- Retrocomputing
-- Mouse
-- External SDRAM
-- Ethernet: raw tx and rx
-- Ethernet: udp tx and rx
-- Reverse engineer full board
+When using the Altera USB Blaster, you need to bridge the pins 5 and 7 of the GPIO CPLD connector (see the picture above) with a 1kΩ resistor. This basically ensures that the nStatus signal follows the nConfig one, and that makes the programmer think that the FPGA is ready to be programmed. Somehow this signal is not routed, thus we need this small hack. You can use a small SMD resistor for this. 
+
+# Goals
+
+- ✅ Reverse engineer main components and connections
+- ✅ Basic Blinky test for CPLD
+- ✅ Using Passive Serial Configuration for loading FPGA bitstream (CPLD passes through programming signals to FPGA)
+- ❌ CPLD code to load FPGA bitstream from serial flash
+- ✅ Blinky in FPGA
+- ❌ Serial port FPGA
+- ❌ Sound output
+- ❌ Keyboard input
+- ❌ VGA output
+- ❌ Retrocomputing
+- ❌ Mouse input
+- ❌ External SDRAM
+- ❌ Ethernet: raw tx and rx
+- ❌ Ethernet: udp tx and rx
+- ❌ Reverse engineer full board
+
+# Thanks to
+[Carlos Pantelides (cpantel)](https://github.com/cpantel/)
 
 # Inspirations
 - https://github.com/UzixLS/ncomputing-l230
