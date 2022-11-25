@@ -7,7 +7,7 @@ The goal is to be able to use it as a generic FPGA development board. Ideally we
 
 # Photo of the board
 
-![Photo of the PCB](docs/pcb.jpg)
+![Labels](docs/top_labels.png)
 
 # Board without main components
 
@@ -15,8 +15,6 @@ The goal is to be able to use it as a generic FPGA development board. Ideally we
 ![Bottom layer](docs/bottom.jpg)
 
 Both images were distorted so that the vias match. The top image is the top layer and the bottom image is the bottom layer.
-
-![Labels](docs/top_labels.png)
 
 # Component list
 
@@ -39,6 +37,10 @@ Both images were distorted so that the vias match. The top image is the top laye
 **When using Quartus to generate the bitstream, remember that by default non defined pins are marked as outputs and are LOW. This can cause short circuits and destroy the rest of the circuit. To avoid that, you should go to Assignments->Device->Device and Pin Options...->Unused Pins and set it to "As input tri-stated with weak pull-up".**
 
 When using the Altera USB Blaster, you need to bridge the pins 5 and 7 of the GPIO CPLD connector (see the picture above) with a 1kΩ resistor. This basically ensures that the nStatus signal follows the nConfig one, and that makes the programmer think that the FPGA is ready to be programmed. Somehow this signal is not routed, thus we need this small hack. You can use a small SMD resistor for this. 
+
+# Documentation
+
+The [docs](docs/) folder contains many documents that are useful for this project.
 
 # Goals
 

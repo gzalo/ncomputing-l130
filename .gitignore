@@ -7,3 +7,4 @@
 *.dcm
 *.bak
 pcb/l130-backups
+docs/*.pdf
