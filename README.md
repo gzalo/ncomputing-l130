@@ -9,16 +9,14 @@ The goal is to be able to use it as a generic FPGA development board. Ideally we
 
 ![Labels](docs/top_labels.png)
 
-# Board without main components
+# Schematic, component list and PCB photos
 
-![Top layer](docs/top.jpg)
-![Bottom layer](docs/bottom.jpg)
+[PDF of the Schematic](docs/pcb.pdf)
+KiCad files can be found in the `pcb/` folder.
 
-Both images were distorted so that the vias match. The top image is the top layer and the bottom image is the bottom layer.
+[Full component list here (may be missing some values, or have errors)](docs/components.csv)
 
-# Component list
-
-[You can find the full component list here. Some of them might not have values, or may contain errors.](docs/components.csv)
+[PCB Top layer](docs/top.jpg) / [PCB Bottom layer](docs/bottom.jpg)
 
 # Block diagram
 
@@ -58,7 +56,7 @@ The [docs](docs/) folder contains many documents that are useful for this projec
 - ❌ External SDRAM
 - ❌ Ethernet: raw tx and rx
 - ❌ Ethernet: udp tx and rx
-- ❌ Reverse engineer full board
+- ✅ Reverse engineer full board
 
 # Thanks to
 [Carlos Pantelides (cpantel)](https://github.com/cpantel/)

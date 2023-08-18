@@ -19,6 +19,17 @@ entity top_cpld is
 end entity;
 	
 architecture behavioral of top_cpld is
+	attribute chip_pin : string;
+	attribute chip_pin of clk_i : signal is "87";
+	attribute chip_pin of led_o : signal is "1";
+	attribute chip_pin of fake_dclk : signal is "57";
+	attribute chip_pin of fake_conf_done : signal is "58";
+	attribute chip_pin of fake_data0 : signal is "61";
+	attribute chip_pin of fake_nconfig : signal is "60";
+	attribute chip_pin of fpga_data0 : signal is "68";
+	attribute chip_pin of fpga_dclk : signal is "63";
+	attribute chip_pin of fpga_nconfig : signal is "67";
+	attribute chip_pin of fpga_conf_done : signal is "16";
 begin
 	blink: entity work.blinky generic map(clock_freq=>80e6) port map(clk_i=>clk_i, led_o=>led_o);
 
