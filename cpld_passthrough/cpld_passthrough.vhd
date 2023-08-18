@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity top_cpld is
+entity cpld_passthrough is
 	port(
         clk_i: in std_logic;
 		led_o: out std_logic;
@@ -18,7 +18,7 @@ entity top_cpld is
 		);
 end entity;
 	
-architecture behavioral of top_cpld is
+architecture behavioral of cpld_passthrough is
 	attribute chip_pin : string;
 	attribute chip_pin of clk_i : signal is "87";
 	attribute chip_pin of led_o : signal is "1";
