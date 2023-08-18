@@ -1,0 +1,141 @@
+# FPGA pins by class
+
+## Audio
+- 1
+- 2
+
+## Clock
+- 28
+- 153
+
+## To CPLD (programming)
+- 25 (DATA0) to CPLD_68
+- 26 (nCONFIG) to CPLD_67
+- 36 (DCLK) to CPLD_63 via 82 ohms
+- 145 (CONF_DONE) to CPLD_16
+
+## To CPLD (general purpose)
+- 73 to CPLD_50
+- 74 to CPLD_49
+- 79 to CPLD_47
+- 80 to CPLD_46
+- 81 to CPLD_45
+- 83 to CPLD_44
+- 86 to CPLD_42
+- 87 to CPLD_41
+- 88 to CPLD_40
+- 94 to CPLD_32
+- 95 to CPLD_31
+- 96 to CPLD_30
+- 97 to CPLD_29
+
+## LEDs
+- 85 to LED3
+- 93 to LED2
+
+## Ethernet
+- 100 to ETH_42 RESETB
+- 101 to ETH_46 X1
+- 134 to ETH_4 TXD2
+- 135 to ETH_5 TXD1
+- 136 to ETH_6 TXD0
+- 137 to ETH_7 TXC
+- 138 to ETH_16 RXC
+- 139 to ETH_18 RXD3
+- 140 to ETH_19 RXD2
+- 141 to ETH_20 RXD1
+- 143 to ETH_21 RXD0
+- 144 to ETH_22 RXDV
+- 156 to ETH_23 CRS
+- 180 to ETH_24 FXER/FXEN
+- 198 to ETH_3 TXD3
+- 199 to ETH_2 TXEN
+- 200 to ETH_1 COL
+- 201 to ETH_25 MDC
+- 202 to ETH_26 MDIO
+
+## RAM
+- 177 to MEM_24 A10
+- 116 to MEM_66 A9
+- 117 to MEM_62 A5
+- 118 to MEM_63 A6
+- 119 to MEM_65 A8
+- 120 to MEM_64 A7
+- 121 to MEM_61 A4
+- 122 to MEM_60 A3
+- 174 to MEM_27 A2
+- 175 to MEM_26 A1
+- 176 to MEM_25 A0
+
+- 178 to MEM_23 BA1
+- 179 to MEM_22 BA0
+
+- 123 to MEM_59 DQM3
+- 173 to MEM_28 DQM2
+- 114 to MEM_71 DQM1
+- 185 to MEM_16 DQM0
+
+- 124 to MEM_56 DQ31
+- 125 to MEM_54 DQ30
+- 126 to MEM_53 DQ29
+- 127 to MEM_51 DQ28
+- 128 to MEM_50 DQ27
+- 131 to MEM_48 DQ26
+- 132 to MEM_47 DQ25
+- 133 to MEM_45 DQ24
+- 158 to MEM_42 DQ23
+- 159 to MEM_40 DQ22
+- 160 to MEM_39 DQ21
+- 161 to MEM_37 DQ20
+- 162 to MEM_36 DQ19
+- 163 to MEM_34 DQ18
+- 164 to MEM_33 DQ17
+- 165 to MEM_31 DQ16
+- 102 to MEM_85 DQ15
+- 103 to MEM_83 DQ14
+- 104 to MEM_82 DQ13
+- 105 to MEM_80 DQ12
+- 106 to MEM_79 DQ11
+- 107 to MEM_77 DQ10
+- 108 to MEM_76 DQ9
+- 113 to MEM_74 DQ8
+- 186 to MEM_13 DQ7
+- 187 to MEM_11 DQ6
+- 188 to MEM_10 DQ5
+- 193 to MEM_8 DQ4
+- 194 to MEM_7 DQ3
+- 195 to MEM_5 DQ2
+- 196 to MEM_4 DQ1
+- 197 to MEM_2 DQ0
+
+- 115 to MEM_68 CLK
+- 181 to MEM_17 !WE
+- 182 to MEM_18 !CAS
+- 183 to MEM_19 !RAS
+- 184 to MEM_20 !CS
+
+## VGA
+- 166 to VGA_B0
+- 167 to VGA_B1
+- 168 to VGA_B2
+- 169 to VGA_B4
+- 170 to VGA_B3
+- 217 to VGA_R4
+- 220 to VGA_R3
+- 221 to VGA_R2
+- 222 to VGA_R1
+- 223 to VGA_R0
+- 224 to VGA_G5
+- 225 to VGA_G4
+- 226 to VGA_G3
+- 227 to VGA_G2
+- 228 to VGA_G1
+- 233 to VGA_G0
+- 207 to VGA_HS
+- 208 to VGA_VS
+
+## Mouse and Keyboard
+- 203 to MOUSE_DATA
+- 204 to MOUSE_CLK
+- 205 to KBD_CLK
+- 206 to KBD_DATA

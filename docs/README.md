@@ -1,7 +1,9 @@
 # Documents
 
 - [Component List](components.csv)
+- [FPGA pins by class](fpga_pins_by_class.md)
 - [FPGA pins (one row per pin)](fpga_pins.txt)
+- [CPLD pins (one row per pin)](cpld_pins.txt)
 - [Configuration handbook](https://cdrdv2-public.intel.com/654348/section_3_vol_2.pdf)
 - [JTAG, AS and PS pinouts](https://www.waveshare.com/w/upload/DVD_ALTERA_EN/data/product/USB_Blaster_PG-1-1.htm)
 - [AT45DB041B (Flash) datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/doc3443.pdf)
