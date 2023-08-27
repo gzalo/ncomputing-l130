@@ -4,21 +4,19 @@ The idea of this project is to reverse engineer the Ncomputing L130 PCB (rev 1.3
 ![Labels](docs/img/top_labels.png)
 
 Status:
-- ✅ Reverse engineer main components and connections
-- ✅ Basic Blinky test for CPLD
-- ✅ Using Passive Serial Configuration for loading FPGA bitstream (CPLD passes through programming signals to FPGA)
-- ✅ Reverse engineer full board
-- ✅ Blinky in FPGA
-- ❌ CPLD code to load FPGA bitstream from serial flash
-- ❌ Retrocomputing using [multicomp](http://searle.x10host.com/Multicomp/index.html)
-- ❌ Serial port FPGA
+- ✅ [Reverse engineer main components and connections](pcb/)
+- ✅ [Basic Blinky test for CPLD](cpld_passthrough/)
+- ✅ [Using Passive Serial Configuration for loading FPGA bitstream (CPLD passes through programming signals to FPGA)](cpld_passthrough/)
+- ✅ [Reverse engineer full board](pcb/)
+- ✅ [Blinky in FPGA](fpga_blink/)
+- ✅ [VGA output](fpga_blink/)
+- ✅ [Retrocomputing using multicomp](multicomp/)
+- ❌ Persist FPGA bitstream in serial flash
+- ❌ Serial port 
 - ❌ Sound output
-- ❌ Keyboard input
-- ❌ VGA output
-- ❌ Mouse input
-- ❌ External SDRAM
-- ❌ Ethernet: raw tx and rx
-- ❌ Ethernet: udp tx and rx
+- ❌ Keyboard and mouse
+- ❌ SDRAM controller
+- ❌ Ethernet
 
 # Schematic, component list and PCB photos
 
@@ -38,7 +36,9 @@ KiCad files can be found in the `pcb/` folder.
 
 The following folders contain `vhd` files that can be used to create a _Quartus II_ project for this board:
 - cpld_passthrough: This generates a CPLD bitstream that makes it work as a passthrough so we can send the signals required for programming the FPGA.
-- fpga_blink: This generates a FPGA bitstream that blinks the LEDs.
+- fpga_blink: Blinks the LEDs that are connected to the FPGA.
+- fpga_vga: Generates a 640x480 VGA signal that has some characters of a 32x32 monochromatic font. Uses an internal PLL to convert the 80 MHz clock into the 25 MHz pixel clock required.
+- multicomp: Details on mods to Grant Searle's guide to create a retro computer
 
 [Getting started: guide to building the projects and programming the board](docs/getting-started.md)
 
