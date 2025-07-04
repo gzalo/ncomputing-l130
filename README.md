@@ -42,6 +42,13 @@ The following folders contain `vhd` files that can be used to create a _Quartus 
 
 [Getting started: guide to building the projects and programming the board](docs/getting-started.md)
 
+# Flex PCB to add GPIOs
+In the [`pin-flex`](pin-flex) folder you can find files to manufacture a very simple flexible PCB that is useful to map out certain unused pins:
+
+![Flex](docs/img/flex.jpg)
+
+To use it, you need to remove R47 and C61, and lift the existing pins using a needle or something similar, while keeping pin 40, 51 and 52 connected to the original board.
+
 # Documentation
 
 The [docs](docs/) folder contains many documents that are useful for this project.
