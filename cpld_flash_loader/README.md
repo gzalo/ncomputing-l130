@@ -47,13 +47,38 @@ Note: FPGA nSTATUS (pin 146) is not connected to the CPLD. The configuration seq
 
 Before using this loader, the flash memory must be programmed with the FPGA bitstream. The bitstream should be stored starting at address 0x000000.
 
-**Note:** The current design assumes the flash is pre-programmed via external means (e.g., using a dedicated flash programmer or a temporary CPLD design). Board programming via JTAG is not included in this version.
+**Note:** The current design assumes the flash is pre-programmed via external means. As specified in the requirements, board programming via JTAG is not included in this version - the expectation is that the memory is already loaded with the bitstream manually.
 
-### Steps to program flash:
-1. Generate your FPGA bitstream (.rbf file) using Quartus
-2. Use an external flash programmer or create a helper CPLD design to write the bitstream to flash starting at address 0
-3. Program the CPLD with this flash_loader design
-4. Power cycle the board - the FPGA should now configure from flash automatically
+### Methods to program the flash:
+
+1. **External Flash Programmer**: 
+   - Remove the flash chip (U5 - AT45DB041B) from the board
+   - Use a dedicated SPI flash programmer
+   - Write the FPGA .rbf bitstream starting at address 0x000000
+   - Reinstall the flash chip on the board
+
+2. **In-Circuit Programming with Test Points**:
+   - If the board has test points for the SPI signals, use them with an external programmer
+   - Ensure the CPLD is not driving the SPI bus during programming
+
+3. **Custom CPLD Flash Programming Design**:
+   - Create a temporary CPLD design that accepts data via JTAG or GPIO
+   - This design would write to the flash memory
+   - After programming the flash, replace with the flash_loader design
+   - This approach requires additional development work
+
+### Bitstream Preparation:
+
+1. Generate your FPGA design using Quartus II
+2. In Quartus, select Device → Device and Pin Options → Configuration
+3. Choose "Passive Serial" as the configuration scheme
+4. Compile the design to generate the bitstream file
+5. Convert to raw binary format (.rbf) if not already done:
+   - File → Convert Programming Files
+   - Select "Raw Binary File (.rbf)" as output format
+   - Add the .sof file as input
+   - Generate the .rbf file
+6. This .rbf file should be written to flash starting at address 0x000000
 
 ## Building the Project
 
@@ -77,6 +102,16 @@ Unlike `cpld_passthrough` which allows external JTAG programming of the FPGA:
 - Configuration happens automatically on power-up
 - No external programmer connection is needed after initial setup
 - The FPGA programming header is not used
+- In this mode, the FPGA only receives configuration data from the CPLD, not from external pins
+
+### Alternative: Hybrid Mode
+
+While this implementation focuses on automatic flash-based configuration, the system could be extended to support a hybrid mode where:
+- A GPIO pin selects between flash mode and passthrough mode
+- Passthrough mode would work like `cpld_passthrough` for development
+- Flash mode enables standalone operation in production
+
+This would require modifying the CPLD logic to multiplex the configuration signals based on a mode selection pin, but the current implementation keeps it simple with flash-only operation.
 
 ## Timing
 
@@ -109,6 +144,15 @@ Unlike `cpld_passthrough` which allows external JTAG programming of the FPGA:
 - Supports continuous array read (command 0xE8)
 - SPI Mode 0 (CPOL=0, CPHA=0)
 - Maximum SPI clock: 20 MHz (we use 5 MHz for margin)
+- 2048 pages of 264 bytes each (with page size selection)
+- Standard 264-byte page mode used for continuous read
+- Total usable capacity: ~540 KB (sufficient for EP1C6 bitstream of ~140 KB)
+
+**Note on Page Size**: The AT45DB041B can operate in two page size modes:
+- Binary page size (256 bytes): More standard but requires one-time configuration
+- DataFlash page size (264 bytes): Default mode, works with continuous read command
+  
+The current implementation uses the default 264-byte page mode with the continuous array read command (0xE8), which works regardless of page size configuration.
 
 ### Cyclone FPGA Passive Serial Configuration
 - MSB-first bit order
