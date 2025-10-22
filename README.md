@@ -11,7 +11,7 @@ Status:
 - ✅ [Blinky in FPGA](fpga_blink/)
 - ✅ [VGA output](fpga_blink/)
 - ✅ [Retrocomputing using multicomp](multicomp/)
-- ❌ Persist FPGA bitstream in serial flash
+- ✅ [Persist FPGA bitstream in serial flash](cpld_flash_loader/)
 - ❌ Serial port 
 - ❌ Sound output
 - ❌ Keyboard and mouse
@@ -36,6 +36,7 @@ KiCad files can be found in the `pcb/` folder.
 
 The following folders contain `vhd` files that can be used to create a _Quartus II_ project for this board:
 - cpld_passthrough: This generates a CPLD bitstream that makes it work as a passthrough so we can send the signals required for programming the FPGA.
+- cpld_flash_loader: CPLD design that automatically loads the FPGA bitstream from the onboard AT45DB041B serial flash on power-up (requires flash to be pre-programmed).
 - fpga_blink: Blinks the LEDs that are connected to the FPGA.
 - fpga_vga: Generates a 640x480 VGA signal that has some characters of a 32x32 monochromatic font. Uses an internal PLL to convert the 80 MHz clock into the 25 MHz pixel clock required.
 - multicomp: Details on mods to Grant Searle's guide to create a retro computer
