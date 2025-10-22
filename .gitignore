@@ -8,3 +8,27 @@
 *.bak
 pcb/l130-backups
 docs/*.pdf
+
+## Quartus II
+*.qws
+*.qpf
+*.qsf
+*.sof
+*.pof
+*.rbf
+*.rpt
+*.summary
+*.smsg
+*.done
+*.jdi
+*.pin
+*.sld
+db/
+incremental_db/
+output_files/
+simulation/
+greybox_tmp/
+*.ppf
+*.ddb
+*.cmp
+*.qdf
