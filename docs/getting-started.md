@@ -3,6 +3,8 @@
 - JTAG programmer: Altera USB Blaster
 - Software: Quartus II 13.0sp1 (can be downloaded from Intel website, has Linux support)
 
+Note for newer Windows versions: USB Blaster clones no longer work reliably due to driver issues. Using a Windows XP virtual machine with USB passthrough is a better option for programming.
+
 You need to bridge the pins 5 and 7 of the GPIO CPLD connector (see the picture above) with a 1kΩ resistor. This basically ensures that the nStatus signal follows the nConfig one, and that makes the programmer think that the FPGA is ready to be programmed. You can use a small SMD resistor for this.
 
 ![Resistor mod](img/resistor_mod.jpg)
@@ -88,3 +90,13 @@ Select "Passive Serial" as mode (on the top right) and then press Start
 ![fpga program](img/fpga-program.png)
 
 If everything went ok, it should show a success message, and you should see the blinking LEDs in the board!
+
+# Booting FPGA from serial flash
+
+The `cpld_flash_boot` project is an alternative CPLD image for booting the FPGA from the on-board AT45DB041B flash at startup.
+
+Build it like the `cpld_passthrough` project, using `cpld_flash_boot` as the Quartus project name and top-level design. Keep the same CPLD device, `EPM3128ATC100-10`, and set unused pins to `As input tri-stated`.
+
+This project assumes the flash is already programmed manually. Store the FPGA `.rbf` file starting at flash byte address 0. The CPLD reads the flash with the AT45DB041B continuous array read command, reverses each byte to send Passive Serial data least-significant bit first, clocks it into FPGA `DATA0`, and stops when `CONF_DONE` rises.
+
+The external Passive Serial passthrough header is not connected through to the FPGA in this mode. Use `cpld_passthrough` when you want to program the FPGA directly from Quartus, or add a mode-select mux in CPLD code if both flash boot and external passthrough are needed in one image.

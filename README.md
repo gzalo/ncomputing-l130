@@ -11,7 +11,7 @@ Status:
 - ✅ [Blinky in FPGA](fpga_blink/)
 - ✅ [VGA output](fpga_blink/)
 - ✅ [Retrocomputing using multicomp](multicomp/)
-- ❌ Persist FPGA bitstream in serial flash
+- ✅ [Persist FPGA bitstream in serial flash](cpld_flash_boot/)
 - ❌ Serial port 
 - ❌ Sound output
 - ❌ Keyboard and mouse
@@ -36,11 +36,14 @@ KiCad files can be found in the `pcb/` folder.
 
 The following folders contain `vhd` files that can be used to create a _Quartus II_ project for this board:
 - cpld_passthrough: This generates a CPLD bitstream that makes it work as a passthrough so we can send the signals required for programming the FPGA.
+- cpld_flash_boot: This generates a CPLD bitstream that reads an already-programmed AT45DB041B serial flash and configures the FPGA on startup.
 - fpga_blink: Blinks the LEDs that are connected to the FPGA.
 - fpga_vga: Generates a 640x480 VGA signal that has some characters of a 32x32 monochromatic font. Uses an internal PLL to convert the 80 MHz clock into the 25 MHz pixel clock required.
 - multicomp: Details on mods to Grant Searle's guide to create a retro computer
 
 [Getting started: guide to building the projects and programming the board](docs/getting-started.md)
+
+Newer Windows note: USB Blaster clones no longer work reliably due to driver issues. Using a Windows XP virtual machine with USB passthrough is a better option for programming.
 
 # Flex PCB to add GPIOs
 In the [`pin-flex`](pin-flex) folder you can find files to manufacture a very simple flexible PCB that is useful to map out certain unused pins:
