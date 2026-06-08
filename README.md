@@ -11,6 +11,7 @@ Status:
 - ✅ [Blinky in FPGA](fpga_blink/)
 - ✅ [VGA output](fpga_blink/)
 - ✅ [Retrocomputing using multicomp](multicomp/)
+- ✅ [Program flash memory using external RP2040](rp2040_flash_memory/)
 - ✅ [Persist FPGA bitstream in serial flash](cpld_flash_boot/)
 - ❌ Serial port 
 - ❌ Sound output
