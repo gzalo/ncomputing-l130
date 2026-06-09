@@ -11,6 +11,11 @@ entity cpld_flash_boot is
 		fpga_nconfig   : out std_logic;
 		fpga_dclk      : out std_logic;
 
+		fake_conf_done : out std_logic;
+		fake_data0     : in std_logic;
+		fake_nconfig   : in std_logic;
+		fake_dclk      : in std_logic;
+
 		flash_so       : in std_logic;
 		flash_si       : out std_logic;
 		flash_sck      : out std_logic;
@@ -27,6 +32,10 @@ architecture behavioral of cpld_flash_boot is
 	attribute chip_pin of fpga_dclk      : signal is "63";
 	attribute chip_pin of fpga_nconfig   : signal is "67";
 	attribute chip_pin of fpga_data0     : signal is "68";
+	attribute chip_pin of fake_dclk      : signal is "57";
+	attribute chip_pin of fake_conf_done : signal is "58";
+	attribute chip_pin of fake_data0     : signal is "61";
+	attribute chip_pin of fake_nconfig   : signal is "60";
 	attribute chip_pin of flash_so       : signal is "21";
 	attribute chip_pin of flash_si       : signal is "22";
 	attribute chip_pin of flash_sck      : signal is "23";
@@ -75,9 +84,10 @@ architecture behavioral of cpld_flash_boot is
 	signal flash_sck_r    : std_logic := '0';
 	signal flash_ncs_r    : std_logic := '1';
 begin
-	fpga_data0   <= fpga_data0_r;
-	fpga_nconfig <= fpga_nconfig_r;
-	fpga_dclk    <= fpga_dclk_r;
+	fpga_data0   <= fake_data0 when state(ST_DONE) = '1' else fpga_data0_r;
+	fpga_nconfig <= fake_nconfig when state(ST_DONE) = '1' else fpga_nconfig_r;
+	fpga_dclk    <= fake_dclk when state(ST_DONE) = '1' else fpga_dclk_r;
+	fake_conf_done <= '0' when state(ST_DONE) = '1' and fpga_conf_done = '0' else 'Z';
 
 	flash_si <= '1' when state(ST_CMD) = '1' and
 		(cmd_count = "000100" or cmd_count = "000110" or cmd_count = "000111")

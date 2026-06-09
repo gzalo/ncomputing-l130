@@ -99,4 +99,4 @@ Build it like the `cpld_passthrough` project, using `cpld_flash_boot` as the Qua
 
 This project assumes the flash is already programmed manually. Store the FPGA `.rbf` file starting at flash byte address 0. The CPLD reads the flash with the AT45DB041B continuous array read command, reverses each byte to send Passive Serial data least-significant bit first, clocks it into FPGA `DATA0`, and stops when `CONF_DONE` rises.
 
-The external Passive Serial passthrough header is not connected through to the FPGA in this mode. Use `cpld_passthrough` when you want to program the FPGA directly from Quartus, or add a mode-select mux in CPLD code if both flash boot and external passthrough are needed in one image.
+After flash boot finishes, the CPLD deselects the flash and passes the external Passive Serial header through to the FPGA, so you can still program the FPGA directly from Quartus without switching back to `cpld_passthrough`.
