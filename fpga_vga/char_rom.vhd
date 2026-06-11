@@ -34,17 +34,17 @@ signal ROM: rom_type:= (
 
 signal memvalue: std_logic_vector(0 to 31);
 signal rom_addr: unsigned(8 downto 0);
+signal posXRom: std_logic_vector(4 downto 0);
 begin
-
 	rom_addr <= unsigned(char) & unsigned(posY);
-	
+
 	process(clk)
-		
-	begin		
+	begin
 		if rising_edge(clk) then
 			memvalue <= ROM(to_integer(rom_addr));
+			posXRom <= posX;
 		end if;
 	end process;
-	
-	valueout <= memvalue(to_integer(unsigned(posX)));
+
+	valueout <= memvalue(to_integer(unsigned(posXRom)));
 end;

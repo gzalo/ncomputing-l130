@@ -72,7 +72,7 @@ begin
 	centroPantalla <= '1' when texY = "01000" and unsigned(texX) >= 6 and unsigned(texX) <= 13 else '0';
 	
 	pixelProximo <= '0' when visible = '0' else
-					 '0' when visible = '1' and salidaRom = '1' and centroPantalla = '1' else 
+					 '0' when visible = '1' and salidaRom = '1' and centroPantalla = '1' else
 			         '1';
 	
 	process(pixelClk)
