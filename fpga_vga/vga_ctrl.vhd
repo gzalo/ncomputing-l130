@@ -14,17 +14,18 @@ entity vga_ctrl is
 end vga_ctrl;
 
 architecture behavioral of vga_ctrl is
-	-- Pixeles por linea (800)
-	constant hpixels: unsigned(9 downto 0) := "1100100000";
-	-- Lineas totales (521)
-	constant vlines: unsigned(9 downto 0) := "1000001001";
+	-- 640x480 VGA timing: sync, back porch, visible area, front porch.
+	constant hpixels: unsigned(9 downto 0) := to_unsigned(800, 10);
+	constant vlines: unsigned(9 downto 0) := to_unsigned(525, 10);
+	constant hpixels_last: unsigned(9 downto 0) := hpixels - 1;
+	constant vlines_last: unsigned(9 downto 0) := vlines - 1;
 	
-	constant hbp: unsigned(9 downto 0) := "0010010000";	 -- Back porch horizontal (144)
-	constant hfp: unsigned(9 downto 0) := "1100010000";	 -- Front porch horizontal (784)
-	constant vbp: unsigned(9 downto 0) := "0000011111";	 -- Back porch vertical (31)
-	constant vfp: unsigned(9 downto 0) := "0111111111";	 -- Front porch vertical (511)
-	constant hsc: unsigned(9 downto 0) := "0001100001";	 -- Pixeles de sincronismo
-	constant vsc: unsigned(9 downto 0) := "0000000011";	 -- Lineas de sincronismo
+	constant hsc: unsigned(9 downto 0) := to_unsigned(96, 10);
+	constant hbp: unsigned(9 downto 0) := to_unsigned(144, 10);
+	constant hfp: unsigned(9 downto 0) := to_unsigned(784, 10);
+	constant vsc: unsigned(9 downto 0) := to_unsigned(2, 10);
+	constant vbp: unsigned(9 downto 0) := to_unsigned(35, 10);
+	constant vfp: unsigned(9 downto 0) := to_unsigned(515, 10);
 
 	-- Contadores de línea y pixel
 	signal hc, vc: unsigned(9 downto 0) := "0000000000";	
@@ -32,9 +33,9 @@ begin
     process(pixel_clk)
     begin
         if rising_edge(pixel_clk) then
-				 if hc = hpixels then														
+				 if hc = hpixels_last then
 					  hc <= (others => '0');
-					  if vc = vlines then															 
+					  if vc = vlines_last then
 							vc <= (others => '0');
 					  else
 							vc <= vc + 1;

@@ -1,7 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_unsigned.all;
 
 entity fpga_vga is
 	port(
@@ -41,7 +40,7 @@ architecture behavioral of fpga_vga is
 begin
 	pll: entity work.pll port map(clk_i, pixelClk);
 	vga: entity work.vga_ctrl port map(pixelClk, vga_hsync, vga_vsync, x, y, visible);
-	rom: entity work.char_rom port map(clk_i, caracter, posX, posY, salidaRom);
+	rom: entity work.char_rom port map(pixelClk, caracter, posX, posY, salidaRom);
 	gen: entity work.gen_enable generic map(416666) port map(pixelClk, enableCounter);
 	
 	--640x480 => 20x15 caracteres de 32x32
